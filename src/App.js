@@ -7,7 +7,7 @@ import Play from "./pages/Play";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
-//commit2 temp12345
+//commit2 temp1
 function App() {
   const user = localStorage.getItem("token");
   return (
