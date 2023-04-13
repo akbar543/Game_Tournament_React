@@ -14,6 +14,7 @@ function App() {
     <div>
       <ResponsiveAppBar/>
       <Routes>
+        <Route path="/" element={<Home/>} />
         <Route path="/Home" element={<Home/>} />
         <Route path="/Games" element={<Games/>} />
         <Route path="/More" element={<More/>} />
