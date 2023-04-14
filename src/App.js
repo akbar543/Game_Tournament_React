@@ -7,10 +7,23 @@ import Play from "./pages/Play";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { userActions } from "./store";
 // import { useSelector } from 'react-redux'
 // import { selectUser } from './features/userSlice'
 //commit2 temp1
 function App() {
+  const dispatch = useDispatch();
+
+  const user = useSelector(state => state.user);
+  console.log(user);
+
+  useEffect(()=>{
+    if(localStorage.getItem("userId")){
+      dispatch(userActions.login());
+    }
+  },[localStorage]);
   // const user = useSelector(selectUser)
   return (
     <div>

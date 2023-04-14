@@ -15,7 +15,7 @@ import AdbIcon from '@mui/icons-material/Adb';
 import {Link, useNavigate} from 'react-router-dom'
 import { red } from '@mui/material/colors';
 import {useDispatch, useSelector} from 'react-redux';
-import { userActions } from '../app/store';
+import { userActions } from '../store';
 
 const pages1 = ['Home', 'Login', 'SignUp'];
 const pages2 = ['Home', 'Games', 'More', 'Play'];

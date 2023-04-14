@@ -1,11 +1,12 @@
 import { useState} from "react";
 import axios from "axios";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
-import { userActions } from "../../features/userSlice";
+import { userActions } from "../../store";
 
 const Login = () => {
+	const user = useSelector(state => state.user);
 	const dispatch = useDispatch();
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
@@ -19,8 +20,11 @@ const Login = () => {
 		try {
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
+			console.log(res);
 			localStorage.setItem("token", res.data);
+			localStorage.setItem("userId", res.id);
 			dispatch(userActions.login());
+			console.log(user)
 			window.location = "/";
 		} catch (error) {
 			if (
