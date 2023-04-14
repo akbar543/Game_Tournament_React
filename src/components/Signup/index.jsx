@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import styles from "./styles.module.css";
+import { userActions } from "../../features/userSlice";
+import { useDispatch } from 'react-redux';
 
 const Signup = () => {
+	const dispatch = useDispatch();
 	const [data, setData] = useState({
 		firstName: "",
 		lastName: "",
@@ -22,6 +25,7 @@ const Signup = () => {
 		try {
 			const url = "http://localhost:8080/api/users";
 			const { data: res } = await axios.post(url, data);
+			dispatch(userActions.login());
 			navigate("/login");
 			console.log(res.message);
 		} catch (error) {

@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { useState} from "react";
 import axios from "axios";
+import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
 import styles from "./styles.module.css";
+import { userActions } from "../../features/userSlice";
 
 const Login = () => {
+	const dispatch = useDispatch();
 	const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
 
@@ -17,6 +20,7 @@ const Login = () => {
 			const url = "http://localhost:8080/api/auth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
+			dispatch(userActions.login());
 			window.location = "/";
 		} catch (error) {
 			if (

@@ -52,6 +52,7 @@ const HeroSlider = () => {
             height={700}
             className="d-block w-100"
             src="https://themes.pixiesquad.com/pixiefreak/twisting-nether/wp-content/uploads/2018/10/slide_03.jpg"
+            // src="https://images6.alphacoders.com/709/thumb-1920-709832.jpg"
             alt="Third slide"
           />
           <div style={{ position: 'absolute', bottom: 0, color: 'white', height: 400, marginLeft: 150 }}>

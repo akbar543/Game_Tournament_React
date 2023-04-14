@@ -7,9 +7,11 @@ import Play from "./pages/Play";
 import Main from "./components/Main";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
+// import { useSelector } from 'react-redux'
+// import { selectUser } from './features/userSlice'
 //commit2 temp1
 function App() {
-  const user = localStorage.getItem("token");
+  // const user = useSelector(selectUser)
   return (
     <div>
       <ResponsiveAppBar/>

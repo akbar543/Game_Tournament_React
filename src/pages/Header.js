@@ -12,13 +12,20 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { red } from '@mui/material/colors';
+import {useDispatch, useSelector} from 'react-redux';
+import { userActions } from '../app/store';
 
-const pages = ['Home', 'Games', 'More', 'Play'];
+const pages1 = ['Home', 'Login', 'SignUp'];
+const pages2 = ['Home', 'Games', 'More', 'Play'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
+  const user = useSelector(state => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -35,6 +42,8 @@ function ResponsiveAppBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+    dispatch(userActions.logout());
+    navigate("/");
   };
 
   return (
@@ -89,7 +98,17 @@ function ResponsiveAppBar() {
                 display: { xs: 'block', md: 'none' },
               }}
             >
-              {pages.map((page) => (
+              {user ?
+              
+              pages2.map((page) => (
+                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                  <Typography textAlign="center">
+                    <Link style={{textDecoration: "none", color:"black"}} to={`/${page}`}>{page}</Link>  
+                  </Typography>
+                </MenuItem>
+              ))
+            
+            : pages1.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">
                     <Link style={{textDecoration: "none", color:"black"}} to={`/${page}`}>{page}</Link>  
@@ -118,7 +137,19 @@ function ResponsiveAppBar() {
             LOGO
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
+            {user ?
+            pages2.map((page) => (
+              <Button
+                key={page}
+                onClick={handleCloseNavMenu}
+                sx={{ my: 2, color: 'white', display: 'block' }}
+              >
+                {/* {page} */}
+                <Link style={{textDecoration: "none", color:"white"}} to={`/${page}`}>{page}</Link>
+              </Button>
+            ))
+          
+          : pages1.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
