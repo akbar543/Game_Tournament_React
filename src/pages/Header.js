@@ -42,6 +42,7 @@ function ResponsiveAppBar() {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
+    localStorage.removeItem("userId");
     dispatch(userActions.logout());
     navigate("/");
   };
