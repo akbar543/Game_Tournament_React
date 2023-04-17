@@ -18,10 +18,16 @@ const body2 = () => {
 
 
         <div className='card-box'>
-          <a src="/login" alt="Mythrill" target="_blank">
+          <a href="/Overview" alt="Mythrill" target="_blank">
             <div class="card">
               <div class="M-wrapper">
                 <img src='assets\images\valocover.png' class="cover-image" />
+                <div>
+                  <p>Mode: 1v1 Spike Rush</p>
+                  <p>Server: Asia</p>
+                  <p>Entry Fee: Free</p>
+                  <p>Starts at: 04/17/2023 9:30 PM</p>
+                </div>
               </div>
               {/* <img src="https://ggayane.github.io/css-experiments/cards/dark_rider-title.png" class="title" /> */}
               <img src='assets\images\jett.png' class="character" />
