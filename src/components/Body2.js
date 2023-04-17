@@ -18,7 +18,7 @@ const body2 = () => {
 
 
         <div className='card-box'>
-          <a href="https://www.mythrillfiction.com/the-dark-rider" alt="Mythrill" target="_blank">
+          <a src="/login" alt="Mythrill" target="_blank">
             <div class="card">
               <div class="M-wrapper">
                 <img src='assets\images\valocover.png' class="cover-image" />

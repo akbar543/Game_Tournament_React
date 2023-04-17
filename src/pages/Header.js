@@ -16,6 +16,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import { red } from '@mui/material/colors';
 import {useDispatch, useSelector} from 'react-redux';
 import { userActions } from '../store';
+import styles from './header.module.css'
 
 const pages1 = ['Home', 'Login', 'SignUp'];
 const pages2 = ['Home', 'Games', 'More', 'Play'];
@@ -48,7 +49,10 @@ function ResponsiveAppBar() {
   };
 
   return (
-    <AppBar position="sticky" sx={{background: 'transparent' }}>
+    // <AppBar className={styles.appbar} position="sticky" >
+    <AppBar className='styles.appbar' position="sticky" sx={{background: '#FF6D00' }}>
+    {/* <AppBar className='styles.appbar' position="sticky" sx={{background: 'transparent' }}> */}
+    {/* <AppBar className='styles.appbar' position="sticky" sx={{background: rgb(255, 109, 0), radial-gradient(circle, rgba(255, 109, 0, 1) 0%, rgba(83, 0, 161, 1) 100%)}}> */}
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />

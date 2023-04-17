@@ -1,0 +1,40 @@
+.centered{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
+.verify1{
+    /* background-color: red; */
+}
+.box{
+    background: rgb(60, 9, 108);
+        background: linear-gradient(153deg, rgba(60, 9, 108, 1) 22%, rgba(255, 121, 0, 1) 100%);
+}
+
+input{
+    background-color: #240046;
+    margin: 5px;
+    padding: 3px;
+    border-style: none;
+    padding: 7px 9px;
+    margin: 10px;
+    border-radius: 10px;
+    /* background-color: #FF9E00; */
+    color: #FF9E00;
+    font-weight: 700;
+}
+form button{
+    margin: 3px;
+    color: #240046;
+    padding: 7px 9px;
+    /* margin: 7px; */
+    border-radius: 10px;
+    /* border-color: #874c00; */
+    border-style: none;
+    /* background-color: #FF6D00; */
+
+}

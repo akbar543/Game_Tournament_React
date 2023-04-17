@@ -10,8 +10,13 @@ import Login from "./components/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { userActions } from "./store";
-import Teams from "./pages/Teams";
+// import Teams from "./pages/player_table";
 import Player from "./pages/Player";
+import Valo from "./pages/Valo";
+import Rules from "./pages/Tournament Pages/Rules";
+import Bracket from "./pages/Tournament Pages/Bracket";
+import Overview from "./pages/Tournament Pages/Overview";
+import Teams from "./pages/Tournament Pages/Teams";
 // import { useSelector } from 'react-redux'
 // import { selectUser } from './features/userSlice'
 //commit2 temp007
@@ -41,7 +46,11 @@ function App() {
         </>
         }
         <Route path="/Player" element={<Player/>} />
-        <Route path="/Teams" element={<Teams/>} />
+        <Route path="/Overview" element={<Overview/>} />
+        <Route path="/Bracket" element={<Bracket/>} />
+        <Route path="/Teams" element={<Valo/>} />
+        <Route path="/Rules" element={<Rules/>} />
+        <Route path="/Valo" element={<Valo/>} />
 
         
         {/* {user && <Route path="/" exact element={<Main />} />} */}
