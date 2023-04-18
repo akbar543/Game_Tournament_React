@@ -2,14 +2,18 @@ import React, { useState } from 'react'
 import axios from 'axios';
 import styles from './valo.module.css'
 import THead from './Tournament Pages/THead';
+import { postTeam } from './Helper';
 
 
 const Valo = () => {
-  let button1 = false;
-  let button2 = false;
-  let button3 = false;
-  let button4 = false;
-  let button5 = false;
+  const queryParameters = new URLSearchParams(window.location.search)
+  const tId = queryParameters.get("id")
+
+ const [button1, setButton1]= useState(false);
+  const [button2, setButton2]= useState(false);
+  const [button3, setButton3]= useState(false);
+  const [button4, setButton4]= useState(false);
+  const [button5, setButton5]= useState(false);
 
   const APIKEY = 'RGAPI-bafb939a-cf22-48cd-b1aa-986e105d5640'
                 // RGAPI-a28585e1-cfe1-43e9-bcd8-4e1d0067c860
@@ -38,7 +42,10 @@ const Valo = () => {
 
   const handleOnSubmit = async (e) => {
     e.preventDefault();
-    if(button1 && button2 && button3 && button4 && button5)console.log("verified");
+    if(button1 && button2 && button3 && button4 && button5){
+      // console.log(data.teamName);
+      postTeam(tId, data.teamName, data.p1Name, data.p1Tag, data.p2Name, data.p2Tag, data.p3Name, data.p3Tag, data.p4Name, data.p4Tag, data.p5Name, data.p5Tag).then(data=>console.log(data)).catch(err => console.log(err))
+    }
     else console.log("Not");
   }
 
@@ -49,7 +56,7 @@ const Valo = () => {
     axios.get(APICallString)
     .then(res =>{
       if(res.status === 200){
-        button1=true;
+        setButton1(true);
         setChangeColor1('#00ff00');
       }
       console.log(1);
@@ -64,7 +71,7 @@ const Valo = () => {
     axios.get(APICallString)
     .then(res =>{
       if(res.status === 200){
-        button2=true
+        setButton2(true);
         setChangeColor2('#00ff00');
       }
       console.log(2);
@@ -79,7 +86,7 @@ const Valo = () => {
     axios.get(APICallString)
     .then(res =>{
       if(res.status === 200){
-        button3=true
+        setButton3(true);
         setChangeColor3('#00ff00');
       }
       console.log(3);
@@ -94,7 +101,7 @@ const Valo = () => {
     axios.get(APICallString)
     .then(res =>{
       if(res.status === 200){
-        button4=true
+        setButton4(true);
         setChangeColor4('#00ff00');
       }
       console.log(4);
@@ -109,7 +116,7 @@ const Valo = () => {
     axios.get(APICallString)
     .then(res =>{
       if(res.status === 200){
-        button5=true
+        setButton5(true);
         setChangeColor5('#00ff00');
       }
       console.log(5);

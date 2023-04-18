@@ -1,13 +1,29 @@
 import Body1 from "../components/Body1";
 import HeroSlider from "../components/HeroSlider";
 import Body2 from "../components/Body2";
+import { useEffect, useState } from "react";
+import { getUserDetails } from "./Helper";
 
 function Home() {
+  const [tour, setTournament] = useState([]);
+    useEffect(() =>{
+        getUserDetails().then(data => {
+            setTournament(data)
+            console.log(tour);
+        }).catch(err => console.log(err));
+    },[])
   return (
     <div>
       <HeroSlider/>
       <Body1/>
-      <Body2></Body2>
+      <h2 class="line-title" >Browse Games</h2>
+      {tour.map((t, index)=> (
+        // console.log(t._id)
+        <Body2
+        tArr = {t}
+        />
+      ))}
+      {/* // <Body2></Body2> */}
     </div>
   );
 }
