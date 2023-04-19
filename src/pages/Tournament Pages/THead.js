@@ -8,11 +8,11 @@ const THead = ({tId, teamName, p1, p1t, p2, p2t, p3, p3t, p4, p4t, p5, p5t}) => 
   return (
     <div>
         <img style={{height:'400px' ,width: '100%'}} src='./images/2nd_valo_banner_design.png' alt='gaming img'></img>
-        <div>
-          <a href='/Overview'>Overview</a><p></p>
-          <a href={team}>Bracket</a><p></p>
-          <a href={str}>Teams</a><p></p>
-          <a href='/Rules'>Rules</a>
+        <div style={{display: 'flex', backgroundColor:'#3C096C', fontSize: '20px', fontWeight: '700'}}>
+          <a style={{paddingLeft: '20px', textDecoration: 'none', color:'#FF6D00'}} href='/Overview' >Overview</a><p></p>
+          <a style={{paddingLeft: '20px', textDecoration: 'none', color:'#FF6D00'}} href={team}>Bracket</a><p></p>
+          <a style={{paddingLeft: '20px', textDecoration: 'none', color:'#FF6D00'}} href={str}>Teams</a><p></p>
+          <a style={{paddingLeft: '20px', textDecoration: 'none', color:'#FF6D00'}} href='/Rules'>Rules</a>
         </div>
     </div>
   )

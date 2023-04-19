@@ -281,3 +281,161 @@
     transform: translate3d(0%, -30%, 100px);
   }
 
+.tour-main {
+  background-color: #3C096C;
+  min-height: 100vh;
+
+  /* display: flex; */
+  /* justify-content: center; */
+  align-items: center;
+
+  padding-top: 160px;
+  padding-right: 140px;
+  padding-bottom: 100px;
+  padding-left: 100px;
+}
+
+
+.tour-card {
+  user-select: none;
+  max-width: 300px;
+  margin: 5rem auto;
+  display: inline-block;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  background-color: #282c34;
+  background: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, 0.5) 100%);
+  box-shadow: 0 7px 20px 5px rgba(0, 0, 0, 0.53);
+  border-radius: 0.7rem;
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  overflow: hidden;
+  transition: 0.5s all;
+  width: 130%;
+}
+
+.tour-card hr {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+  margin-top: 0;
+}
+
+.tour-card ins {
+  text-decoration: none;
+}
+
+.tour-card .card-main {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 1rem;
+}
+
+.tour-card .card-main .card-img {
+  border-radius: 0.5rem;
+  max-width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.tour-card .card-main .card-content {
+  margin: 0.5rem 0;
+  color: #fff;
+}
+
+.tour-card .card-main .card-mid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tour-card .card-main .card-mid .card-mid-l {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  /* font-weight: 700; */
+}
+
+.tour-card .card-main .card-mid .card-mid-l ins {
+  margin-left: -0.3rem;
+  margin-right: 0.5rem;
+}
+
+.tour-card .card-main .card-mid .card-mid-r {
+  display: flex;
+  align-items: center;
+  color: #fff;
+  margin-right: 0.2rem;
+}
+
+.tour-card .card-main .card-mid .card-mid-r ins {
+  margin: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.tour-card .card-main .card-footer {
+  display: flex;
+  /* align-items: center; */
+  margin-top: 0.2rem;
+  margin-bottom: -0.3rem;
+  justify-content: center;
+  font-size: 30px;
+}
+
+.tour-card .card-main .card-footer ins {
+  color: #a89ec9;
+  text-decoration: none;
+}
+
+.tour-card .card-main .card-footer .wrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  padding: 0.3rem;
+  margin: 0;
+  margin-right: 0.5rem;
+  border-radius: 100%;
+  box-shadow: inset 0 0 0 4px rgba(0, 0, 0, 0.67);
+}
+
+.tour-card .card-main .card-footer .wrapper img {
+  border-radius: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.13);
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+  margin: 0;
+}
+
+.tour-card::before {
+  position: fixed;
+  content: "";
+  box-shadow: 0 0 100px 40px #ffffff08;
+  top: -10%;
+  left: -100%;
+  transform: rotate(-45deg);
+  height: 60rem;
+  transition: .7s all;
+}
+
+.tour-card:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.015);
+  filter: brightness(1.3);
+}
+
+.tour-card:hover::before {
+  filter: brightness(.5);
+  top: -100%;
+  left: 200%;
+}
+
+.tour-title {
+  color: #fff;
+}
+
+
+.tour-prize {
+  color: #fff;
+}

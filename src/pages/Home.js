@@ -3,6 +3,9 @@ import HeroSlider from "../components/HeroSlider";
 import Body2 from "../components/Body2";
 import { useEffect, useState } from "react";
 import { getUserDetails } from "./Helper";
+// import TournamentCard from "./tournamentCard";
+import TournamentCard from "./tournamentCard";
+import Footer from "./Tournament Pages/foot";
 
 function Home() {
   const [tour, setTournament] = useState([]);
@@ -20,9 +23,11 @@ function Home() {
       {tour.map((t, index)=> (
         // console.log(t._id)
         <Body2
+        // <TournamentCard
         tArr = {t}
         />
       ))}
+      <Footer/>
       {/* // <Body2></Body2> */}
     </div>
   );

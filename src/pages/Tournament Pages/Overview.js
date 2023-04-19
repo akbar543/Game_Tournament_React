@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import THead from './THead'
 import { getUserDetails } from '../Helper';
+import styles from './overview.module.css'
 
 const Overview = () => {
     const [tour, setTournament] = useState([]);
@@ -53,7 +54,7 @@ const queryParameters = new URLSearchParams(window.location.search)
 
 
   return (
-    <div style={{backgroundColor: '#3C096C', color: 'white'}}>
+    <div className={styles.box} style={{backgroundColor: '#3C096C', color: 'white'}}>
         <THead
         tId = {tId}
         teamName = {teamName}
