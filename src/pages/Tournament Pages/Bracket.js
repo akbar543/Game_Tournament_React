@@ -1,5 +1,6 @@
 import React from 'react'
 import THead from './THead'
+import styles from './bracket.module.css'
 
 const Bracket = () => {
         const queryParameters = new URLSearchParams(window.location.search)
@@ -15,7 +16,7 @@ const Bracket = () => {
   const p5 = queryParameters.get("p5"); 
   const p5Tag = queryParameters.get("p5t"); 
   return (
-    <div>
+    <div className={styles.box}>
         <THead/>
       <h3>Bracket</h3>
        {tname}<br/>

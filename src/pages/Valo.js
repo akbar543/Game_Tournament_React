@@ -15,7 +15,7 @@ const Valo = () => {
   const [button4, setButton4]= useState(false);
   const [button5, setButton5]= useState(false);
 
-  const APIKEY = 'RGAPI-bafb939a-cf22-48cd-b1aa-986e105d5640'
+  const APIKEY = 'RGAPI-d292ca5f-74b3-453c-a310-aa7ba83aabfe'
                 // RGAPI-a28585e1-cfe1-43e9-bcd8-4e1d0067c860
   const[changeColor1, setChangeColor1] = useState('#ff3333')
   const[changeColor2, setChangeColor2] = useState('#ff3333')
@@ -237,7 +237,7 @@ const Valo = () => {
 							Verify
 			</button><br/>
         {error && <div>{error}</div>}
-        <button type="submit" >
+        <button type="submit" style={{backgroundColor: 'white'}}>
 							Submit
 			</button>
       </form>

@@ -9,7 +9,7 @@ const Overview = () => {
     useEffect(() =>{
         getUserDetails().then(data => {
             setTournament(data)
-            console.log(tour);
+            // console.log(tour);
         }).catch(err => console.log(err));
     },[])
 
@@ -22,7 +22,7 @@ const queryParameters = new URLSearchParams(window.location.search)
   const teamNo = queryParameters.get("teamNo")
   const teams = queryParameters.get("teams")
   const arr = teams.split(",")
-  console.log(arr[3])
+  console.log(arr[4])
   let teamName = arr[1].slice(12);
   teamName = teamName.slice(0, teamName.length-1)
     let player1 = arr[2].slice(11);
@@ -30,26 +30,26 @@ const queryParameters = new URLSearchParams(window.location.search)
     let p1Tag = arr[3].slice(18);
     p1Tag = p1Tag.slice(0, p1Tag.length-1)
 
-    let player2 = arr[2].slice(11);
+    let player2 = arr[4].slice(11);
     player2 = player2.slice(0, player2.length-1)
-    let p2Tag = arr[3].slice(18);
+    let p2Tag = arr[5].slice(18);
     p2Tag = p2Tag.slice(0, p2Tag.length-1)
 
-    let player3 = arr[2].slice(11);
+    let player3 = arr[6].slice(11);
     player3 = player3.slice(0, player3.length-1)
-    let p3Tag = arr[3].slice(18);
+    let p3Tag = arr[7].slice(18);
     p3Tag = p3Tag.slice(0, p3Tag.length-1)
 
-    let player4 = arr[2].slice(11);
+    let player4 = arr[8].slice(11);
     player4 = player4.slice(0, player4.length-1)
-    let p4Tag = arr[3].slice(18);
+    let p4Tag = arr[9].slice(18);
     p4Tag = p4Tag.slice(0, p4Tag.length-1)
 
-    let player5 = arr[2].slice(11);
+    let player5 = arr[10].slice(11);
     player5 = player5.slice(0, player5.length-1)
-    let p5Tag = arr[3].slice(18);
+    let p5Tag = arr[11].slice(18);
     p5Tag = p5Tag.slice(0, p5Tag.length-1)
-  console.log(teamName, player5, p5Tag)
+  // console.log(teamName, player5, p5Tag)
 
 
 
